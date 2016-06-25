@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>deserto1</name>
+    <events>
+        <variable constant="0" name="tag" sid="5170115762352531" static="0" type="number">0</variable>
+        <include>evento_principal</include>
+        <event-block sid="535728681214524">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3248617036992654" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="7088571455574029" type="personagem">
+                    <param id="0" name="X">500</param>
+                    <param id="1" name="Y">500</param>
+                </action>
+                <action id="-9" name="Set value" sid="986717583934139" type="System">
+                    <param id="0" name="Variable">tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Call function" sid="8383793748063983" type="Function">
+                    <param id="0" name="Name">&quot;pausar&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-10" name="Set value" sid="8224640912178233" type="status">
+                    <param id="0" name="Instance variable">energia</param>
+                    <param id="1" name="Value">101</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="8166375701887794" type="fundo_preto">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="0" name="Call function" sid="231429202711908" type="Function">
+                    <param id="0" name="Name">&quot;animar&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;se_recuperando&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="5763196592999665" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="0" name="Call function" sid="2623226551539039" type="Function">
+                    <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                    <param id="1" name="Parameter {n}">status.nome{###}&quot;Ué... onde estou?&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="9965877752899192" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="4" name="Set animation" sid="1695843039354445" type="avatar">
+                    <param id="0" name="Animation">&quot;parado_baixo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Call function" sid="5338954398166231" type="Function">
+                    <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                    <param id="1" name="Parameter {n}">status.nome{###}&quot;Estou em um deserto? Que lugar é esse?&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="409050244345749" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="0" name="Call function" sid="5477730395541922" type="Function">
+                    <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                    <param id="1" name="Parameter {n}">0</param>
+                </action>
+                <action id="0" name="Call function" sid="2407315588127814" type="Function">
+                    <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}&quot;Clique na janela do tutorial para fecha-la.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="108973854974238">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6175716434923595" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="813262803030239">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1186689047805625" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3887482892463197" type="Function">
+                            <param id="0" name="Name">&quot;pausar&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="597783492400402">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2685857417003664" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8809431663978097" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6112116772568063" type="Function">
+                            <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                            <param id="1" name="Parameter {n}">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7428109112584335">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1717211515654233" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1847331982363518" type="Function">
+                            <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                            <param id="1" name="Parameter {n}">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="632925471434602">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2437155552304558" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8033478377760372" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3766949120342904" type="Function">
+                            <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                            <param id="1" name="Parameter {n}">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9949985707395913">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1773990088577623" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4151349697813378" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2247559576200397" type="Function">
+                            <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                            <param id="1" name="Parameter {n}">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5341940088656442">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6076329343384297" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3669010440912666" type="Function">
+                            <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                            <param id="1" name="Parameter {n}">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7082680551783277">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7414045099659912" type="System">
+                            <param id="0" name="Variable">tutorial</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2362239301901575" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6795905680777357" type="System">
+                            <param id="0" name="Variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="7479563964303849" type="System">
+                            <param id="0" name="Variable">tag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="9230645222649456" type="Function">
+                            <param id="0" name="Name">&quot;pausar&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="8815316950477653" type="Function">
+                            <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                            <param id="1" name="Parameter {n}">status.nome{###}&quot;Me sinto com tontura.... o que significa tudo isso?&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1253016851280849" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1045800944283634" type="Function">
+                            <param id="0" name="Name">&quot;animar&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;caindo&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8689754685107616" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5074620305683098" type="fundo_preto">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="8998884305770975" type="fundo_preto">
+                            <param id="0" name="Fade-in time">5</param>
+                        </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="8497092017944023" type="fundo_preto">
+                            <param id="0" name="Fade-out time">5</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="984710956696654" type="fundo_preto">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1873682407922375" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="2599414924057986" type="fundo_preto">
+                            <param id="0" name="Layer">&quot;TOPO&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="9184690034506809" type="fundo_preto" />
+                        <action id="-16" name="Wait" sid="6276887725184308" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

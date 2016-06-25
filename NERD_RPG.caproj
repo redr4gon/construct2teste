@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>NERD_RPG</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2r2yodl0sbylk</unique-id>
+    <saved-with-version>19500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>600</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>cidade1</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar only</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="deserto1">
+            <object-type name="tilemap_frente_solido" sid="4926840715156145">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="2502119184684484">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="D:\GameConstruct\tiles\tilemap\alterado_rpg_maker_vx_rtp_tileset_by_telles0808.png" />
+                <tiles />
+            </object-type>
+            <object-type name="tilemap_fundo" sid="5006933473101559">
+                <plugin id="Tilemap" />
+                <texture original-source="D:\GameConstruct\tiles\tilemap\alterado_rpg_maker_vx_rtp_tileset_by_telles0808.png" />
+                <tiles />
+            </object-type>
+        </object-folder>
+        <object-folder name="geral">
+            <object-type name="aviso_aguarde" sid="1150606515349779">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Flash" sid="6855086865132349">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8142174237914277" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\botoes\aviso_turno.png">
+                            <collision-poly>
+                                <point x="0.1875" y="0.375" />
+                                <point x="0.8175" y="0.365" />
+                                <point x="1" y="0.5" />
+                                <point x="0.8275" y="0.655" />
+                                <point x="0.1725" y="0.655" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fundo_HUD" sid="4716642537436653">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Function" sid="414484147507961">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Keyboard" sid="9317818785663695">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="avatar" sid="7391091921110879">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="1660031743976572">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="parado_baixo" pingpong="0" repeatcount="1" repeatto="0" sid="7441393120731728" speed="10">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\frente.png" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="andando_baixo" pingpong="0" repeatcount="1" repeatto="0" sid="7082301989797018" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="andando_baixo_lado" pingpong="0" repeatcount="1" repeatto="0" sid="7841732365741674" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="andando_lado" pingpong="0" repeatcount="1" repeatto="0" sid="9390010737835337" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="andando_cima_lado" pingpong="0" repeatcount="1" repeatto="0" sid="5669610440777821" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="andando_cima" pingpong="0" repeatcount="1" repeatto="0" sid="3646051167667772" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1.03571" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="parado_baixo_lado" pingpong="0" repeatcount="1" repeatto="0" sid="2056073265182257" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\baixo_lado.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="parado_lado" pingpong="0" repeatcount="1" repeatto="0" sid="304727660366447" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\lado.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="parado_cima_lado" pingpong="0" repeatcount="1" repeatto="0" sid="4435633015204216" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\cima_lado.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="parado_cima" pingpong="0" repeatcount="1" repeatto="0" sid="4280836278077815" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\cima.png" />
+                    </animation>
+                    <animation framecount="27" loop="0" name="caindo" pingpong="0" repeatcount="1" repeatto="0" sid="3132230179728494" speed="9">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" original-source="D:\GameConstruct\nerd2\velhinho\parado_costas.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.521739" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.52381" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.5" original-source="D:\GameConstruct\nerd2\velhinho\caido_costas.png" />
+                    </animation>
+                    <animation framecount="7" loop="1" name="se_recuperando" pingpong="0" repeatcount="1" repeatto="0" sid="2688564372976922" speed="5">
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                        <frame duration="1" hotspotX="0.56" hotspotY="0.896552" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Mouse" sid="8481902701710216">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="txtenergia" sid="9047889070189772">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtenergia_valor" sid="614390686488779">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtsaude" sid="1050139056327827">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtsaude_valor" sid="1163741145057785">
+                <plugin id="Text" />
+            </object-type>
+            <object-type global="1" name="status" sid="3110419180052388">
+                <plugin id="Arr" />
+                <instance-variables>
+                    <instance-variable name="nome" sid="4612381323073355" type="string" />
+                    <instance-variable name="atracao" sid="9015265259364247" type="number" />
+                    <instance-variable name="hardware" sid="3739989076755157" type="number" />
+                    <instance-variable name="software" sid="6863727480271488" type="number" />
+                    <instance-variable name="programacao" sid="5349286903959841" type="number" />
+                    <instance-variable name="labia" sid="8938404935148328" type="number" />
+                    <instance-variable name="projetos" sid="6661442638285619" type="number" />
+                    <instance-variable name="briga" sid="1535555181682217" type="number" />
+                    <instance-variable name="armas" sid="3335096667687557" type="number" />
+                    <instance-variable name="energia" sid="4805206045356849" type="number" />
+                    <instance-variable name="saude" sid="9111151963594393" type="number" />
+                    <instance-variable name="energia_max" sid="8740616533037153" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type global="1" name="status_habilidades" sid="3552979622152334">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="personagem" sid="4273541228265953">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="7289616488604696">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="8Direction" sid="4674418909852989">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9864680696342057" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="btpass" sid="9910545026532706">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6488336387483011" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\botoes\pass.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="btpass_pressed" sid="3046619196445096">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3092601179274047" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\botoes\pass_pressed.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="balao" sid="1646657836465596">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3189812988170209" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\baloes\duvida1.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="suporte_balao" sid="3874152114349513">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="descricao" sid="332453970363035" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1575792133821563" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="-0.526316" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fundo_texto" sid="4779866739271773">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4396700010092856" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="texto_linha1" sid="9809762120535265">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="texto_linha2" sid="1973045903372853">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="texto_linha3" sid="3562051055709794">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="limite_fase" sid="8800046964069801">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="163508963469122">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7594826347352861" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fundo_preto" sid="1548740182770191">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="3016813679151837">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="txtnome1" sid="8492201054549291">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtnome2" sid="2566942926905649">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtnome3" sid="8901013925655353">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="cidade1">
+            <object-type name="muro" sid="4076549763970194">
+                <plugin id="TiledBg" />
+                <texture original-source="D:\GameConstruct\tiles\f08e541a07788a51c59fda700d92362f.jpg" />
+            </object-type>
+            <object-type name="lay1borda_calcada" sid="9813703361045384">
+                <plugin id="TiledBg" />
+                <texture original-source="D:\GameConstruct\tiles\depositphotos_8805450-Grungy-Stone-Texture.jpg" />
+            </object-type>
+            <object-type name="lay1calcada" sid="3961590776202238">
+                <plugin id="TiledBg" />
+                <texture original-source="D:\GameConstruct\tiles\floor-tile-texture-free-download-260119.jpg" />
+            </object-type>
+            <object-type name="lay1rua" sid="707631904351594">
+                <plugin id="TiledBg" />
+                <texture original-source="D:\GameConstruct\tiles\images.jpg" />
+            </object-type>
+            <object-type name="lay1borda_limite" sid="726050393583883">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="2990465006576912">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6724098086033086" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="lay1faixa_rua" sid="397644542178669">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="lay1telhado1" sid="3887536946924236">
+                <plugin id="TiledBg" />
+                <texture original-source="D:\GameConstruct\tiles\fundo-alaranjado-sem-emenda-da-textura-da-telha-de-telhado-38434208.jpg" />
+            </object-type>
+        </object-folder>
+        <object-folder name="tela_inicial">
+            <object-type name="btcontinuar" sid="4458256175714009">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5038557543492842" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\continuar.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="btiniciar" sid="3626834594818138">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="509099936147245" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\botao_iniciar.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="btopcoes" sid="3825143871450452">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6693633979723411" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\opcoes.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="tutorial" sid="2083746734730675">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3957537506442249" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\GameConstruct\tutorial1\tutorial6.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="botoes" plugin-id="Sprite" sid="9385939496536971">
+            <members>
+                <member>btcontinuar</member>
+                <member>btiniciar</member>
+                <member>btopcoes</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>cidade1.xml</layout>
+        <layout>tela_inicial.xml</layout>
+        <layout>deserto1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>cidade1.xml</event-sheet>
+        <event-sheet>tela_inicial.xml</event-sheet>
+        <event-sheet>deserto1.xml</event-sheet>
+        <event-sheet>evento_principal.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="7" />
+        <global-instance type="Mouse" uid="19" />
+        <global-instance type="Function" uid="37" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

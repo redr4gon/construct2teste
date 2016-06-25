@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evento_principal</name>
+    <events>
+        <variable constant="0" name="tutorial" sid="6536344399257117" static="0" type="number">0</variable>
+        <variable constant="0" name="angulo" sid="9962009395734875" static="0" type="number">0</variable>
+        <variable constant="0" name="linha_escrita" sid="9032171376485172" static="0" type="number">0</variable>
+        <variable constant="0" name="animacao" sid="4544613215845092" static="0" type="number">0</variable>
+        <variable constant="0" name="turno" sid="5279403834559061" static="0" type="number">0</variable>
+        <event-group description="" sid="8323002786615944" title="Personagem">
+            <sub-events>
+                <event-block sid="4440158499340545">
+                    <conditions>
+                        <condition id="6" name="On frame changed" sid="1286354296009344" type="avatar" />
+                        <condition behavior="8Direction" id="1" name="Compare speed" sid="2994867764361607" type="personagem">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7406422427010171" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9980564616571859" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Value">status.energia-3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2786803815097913">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="4457043016608557" type="personagem" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9542495284850311" type="System">
+                            <param id="0" name="Variable">angulo</param>
+                            <param id="1" name="Value">personagem.8Direction.MovingAngle</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4092499178349173" type="System">
+                            <param id="0" name="Variable">animacao</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8356657909723114">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="4621721288977137" type="System">
+                                    <param id="0" name="Value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Lower bound">1</param>
+                                    <param id="2" name="Upper bound">89</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7385632480456214" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_baixo_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="2634294807838222" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5850118599585646">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6236408880485403" type="System">
+                                    <param id="0" name="First value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8552786832163641" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_baixo&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7702993818356361">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="1134265972289777" type="System">
+                                    <param id="0" name="Value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Lower bound">91</param>
+                                    <param id="2" name="Upper bound">179</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7248884137950245" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_baixo_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="741291356126934" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2370988118234662">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7166153710572827" type="System">
+                                    <param id="0" name="First value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">180</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2443327953390024" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="346435194738967" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1863218498839471">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1658675491749794" type="System">
+                                    <param id="0" name="First value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">-90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4226636014422197" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_cima_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="6480145663729905" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="481967893515546">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9361575736856975" type="System">
+                                    <param id="0" name="First value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3368188652208602" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_cima&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8688112664946511">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="1323008425617238" type="System">
+                                    <param id="0" name="Value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Lower bound">-89</param>
+                                    <param id="2" name="Upper bound">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8557993513454449" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_cima_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="9815362681174119" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4211112060794941">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3635375952289357" type="System">
+                                    <param id="0" name="First value">personagem.8Direction.MovingAngle</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="6163247190134351" type="avatar">
+                                    <param id="0" name="Animation">&quot;andando_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="7544586567856364" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2653137647307316">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="6636329054448755" type="personagem" />
+                        <condition id="-14" name="Compare variable" sid="1415370213445534" type="System">
+                            <param id="0" name="Variable">animacao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7152243269660485">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="1429803264534127" type="System">
+                                    <param id="0" name="Value">angulo</param>
+                                    <param id="1" name="Lower bound">1</param>
+                                    <param id="2" name="Upper bound">89</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2922052368002492" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_baixo_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="6704725694511468" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7753870314975928">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1279510911089951" type="System">
+                                    <param id="0" name="First value">angulo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8011711303859668" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_baixo&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6054441154267387">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="6639732548923247" type="System">
+                                    <param id="0" name="Value">angulo</param>
+                                    <param id="1" name="Lower bound">91</param>
+                                    <param id="2" name="Upper bound">179</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4602525411533587" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_baixo_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="5062433718095671" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1760291631276033">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1258328348657224" type="System">
+                                    <param id="0" name="First value">angulo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">180</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="9364404873645667" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="2165029803707674" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8073088468017965">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7582681102531278" type="System">
+                                    <param id="0" name="First value">angulo</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">-90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8239957632998063" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_cima_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="7674355219281059" type="avatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1681676803306403">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1848206776979159" type="System">
+                                    <param id="0" name="First value">angulo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3556034738187227" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_cima&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3268199848807673">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="9991749094229988" type="System">
+                                    <param id="0" name="Value">angulo</param>
+                                    <param id="1" name="Lower bound">-89</param>
+                                    <param id="2" name="Upper bound">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="473278420939734" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_cima_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="2726723073024962" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="179654740718713">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7075467014220601" type="System">
+                                    <param id="0" name="First value">angulo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7322173126288235" type="avatar">
+                                    <param id="0" name="Animation">&quot;parado_lado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="4075975196552558" type="avatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4545691214434111">
+            <conditions>
+                <condition id="0" name="On function" sid="2955477237259848" type="Function">
+                    <param id="0" name="Name">&quot;pausar&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="9983499033935087" type="personagem">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="8Direction" id="0" name="Stop" sid="8486267386525365" type="personagem" />
+            </actions>
+        </event-block>
+        <event-block sid="3814991649212348">
+            <conditions>
+                <condition id="0" name="On function" sid="5690490926134401" type="Function">
+                    <param id="0" name="Name">&quot;despausar&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="6692305579168002" type="personagem">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="425237561019954" title="Sistema">
+            <sub-events>
+                <event-block sid="1336076896319583">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="1479188875682278" type="Mouse">
+                            <param id="0" name="Object">suporte_balao</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9426974184789623" type="balao">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4809156215703513" type="balao">
+                            <param id="0" name="X">suporte_balao.X</param>
+                            <param id="1" name="Y">suporte_balao.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9035446028993437">
+                            <conditions>
+                                <condition id="0" name="On click" sid="7367036693782655" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="6349275024317822" type="Function">
+                                    <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}suporte_balao.descricao</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6478558559143976">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="772337569739191" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="2456494961005902" type="balao">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6204877253352001">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="8388994261992432" type="Mouse">
+                            <param id="0" name="Object">btpass</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5036879557071741">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="8711301322075216" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Move to bottom" sid="5108604063544079" type="btpass" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="9425617734639133">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7079153413891216" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="5602202986160986" type="btpass" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="3697835258498754">
+                            <conditions>
+                                <condition id="0" name="On click" sid="6806834964430353" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="1100562890019793" type="Function">
+                                    <param id="0" name="Name">&quot;pausar&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3502752911538135" type="aviso_aguarde">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8303087012325365" type="System">
+                                    <param id="0" name="Seconds">5.0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="523487021188335" type="status">
+                                    <param id="0" name="Instance variable">energia</param>
+                                    <param id="1" name="Value">status.energia_max</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="8471778992954524" type="aviso_aguarde">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9814593826225389" type="Function">
+                                    <param id="0" name="Name">&quot;despausar&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2360791861140635">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3639368350080117" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3885823956892534" type="txtenergia_valor">
+                            <param id="0" name="Text">status.energia</param>
+                        </action>
+                        <action id="0" name="Set text" sid="212167548437318" type="txtsaude_valor">
+                            <param id="0" name="Text">status.saude</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2086858813352014">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7175013196329748" type="status">
+                                    <param id="0" name="Instance variable">energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2463593660628458" type="Function">
+                                    <param id="0" name="Name">&quot;pausar&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3316707559885006">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="1094528508362936" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="2350402514300341" type="avatar">
+                            <param id="0" name="Pin to">personagem</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="8962138485696517" type="personagem">
+                            <param id="0" name="X">145</param>
+                            <param id="1" name="Y">705</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="881562271444651" type="aviso_aguarde">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4926414389719392" type="aviso_aguarde">
+                            <param id="0" name="X">scrollx</param>
+                            <param id="1" name="Y">scrolly</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="65856794715525" type="status">
+                            <param id="0" name="Instance variable">energia</param>
+                            <param id="1" name="Value">status.energia_max</param>
+                        </action>
+                        <action id="2" name="Set font face" sid="9857260359101991" type="txtnome1">
+                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                            <param id="1" name="Style">1</param>
+                        </action>
+                        <action id="2" name="Set font face" sid="2597853845060348" type="txtnome2">
+                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                            <param id="1" name="Style">1</param>
+                        </action>
+                        <action id="2" name="Set font face" sid="4773220853639778" type="txtnome3">
+                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                            <param id="1" name="Style">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="554375727183471" type="System">
+                            <param id="0" name="Variable">linha_escrita</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7539048334872603" type="texto_linha1">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3094550839861041" type="texto_linha2">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3865716119660267" type="texto_linha3">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7513729699501647" type="txtnome1">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1477757121533407" type="txtnome2">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3735682198254874" type="txtnome3">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4575726975856748">
+            <conditions>
+                <condition id="0" name="On function" sid="7272070725354917" type="Function">
+                    <param id="0" name="Name">&quot;escrever_tela&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="8280737242088592" type="System">
+                    <param id="0" name="Variable">linha_escrita</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9514612860197122">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7469089363277625" type="System">
+                            <param id="0" name="First value">linha_escrita</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8983128641223257">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="9956562032054768" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="2708397252270925" type="texto_linha1">
+                                    <param id="0" name="Text">&quot;&lt;&lt; &quot; &amp; Function.Param(1) &amp; &quot; &gt;&gt;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8676206088212746">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1454334067683798" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4657984931917291" type="txtnome1">
+                                    <param id="0" name="Text">Function.Param(0)  &amp;&quot;: &quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8765034575483162" type="texto_linha1">
+                                    <param id="0" name="Text">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="332933157416571">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7934261329526063" type="System">
+                            <param id="0" name="First value">linha_escrita</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9528405625325561">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="4561372097554259" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5363087637222352" type="texto_linha2">
+                                    <param id="0" name="Text">&quot;&lt;&lt; &quot; &amp; Function.Param(1) &amp; &quot; &gt;&gt;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3684270311035481">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3031494464374624" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="391592627160779" type="txtnome2">
+                                    <param id="0" name="Text">Function.Param(0)  &amp;&quot;: &quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="6826391395869159" type="texto_linha2">
+                                    <param id="0" name="Text">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1998629049240224">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5889810057718259" type="System">
+                            <param id="0" name="First value">linha_escrita</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6143348934243256">
+                            <conditions>
+                                <condition id="0" inverted="1" name="Compare text" sid="2240658697065561" type="texto_linha3">
+                                    <param id="0" name="Text to compare">&quot;&quot;</param>
+                                    <param id="1" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4804350939910684" type="texto_linha1">
+                                    <param id="0" name="Text">texto_linha2.Text</param>
+                                </action>
+                                <action id="0" name="Set text" sid="9693917227575474" type="texto_linha2">
+                                    <param id="0" name="Text">texto_linha3.Text</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8748483843875081" type="txtnome1">
+                                    <param id="0" name="Text">txtnome2.Text</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1353117722551877" type="txtnome2">
+                                    <param id="0" name="Text">txtnome3.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6293127494187661">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="9591035107480395" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="1393227925861174" type="texto_linha3">
+                                    <param id="0" name="Text">&quot;&lt;&lt; &quot; &amp; Function.Param(1) &amp; &quot; &gt;&gt;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7176171943369529">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2675318430496672" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5920218318195204" type="txtnome3">
+                                    <param id="0" name="Text">Function.Param(0)  &amp;&quot;: &quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5806297600419363" type="texto_linha3">
+                                    <param id="0" name="Text">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4451418415438295">
+            <conditions>
+                <condition id="0" name="On function" sid="307660378655261" type="Function">
+                    <param id="0" name="Name">&quot;exibe_tutorial&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1469145338537375" type="Function">
+                    <param id="0" name="Name">&quot;pausar&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-3" name="Set position" sid="6101969708969652" type="tutorial">
+                    <param id="0" name="X">scrollx</param>
+                    <param id="1" name="Y">scrolly</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8018173719894072" type="tutorial">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="3685605430168881" type="tutorial">
+                    <param id="0" name="Frame number">Function.Param(0)</param>
+                </action>
+                <action id="-10" name="Add to" sid="1038637329878228" type="System">
+                    <param id="0" name="Variable">tutorial</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7449864583605956">
+            <conditions>
+                <condition id="0" name="On function" sid="5703963880308159" type="Function">
+                    <param id="0" name="Name">&quot;oculta_tutorial&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="2896955031998062" type="tutorial">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Call function" sid="3245431687934426" type="Function">
+                    <param id="0" name="Name">&quot;despausar&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2268148565589287">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="7900576771714484" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">tutorial</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="5470089595118086" type="Function">
+                    <param id="0" name="Name">&quot;oculta_tutorial&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6751194330268101">
+            <conditions>
+                <condition id="0" name="On function" sid="5216418414881118" type="Function">
+                    <param id="0" name="Name">&quot;animar&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9446660435619931" type="System">
+                    <param id="0" name="Variable">animacao</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="3795144796354772" type="avatar">
+                    <param id="0" name="Animation">Function.Param(0)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="4019240714801035" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
